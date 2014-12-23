@@ -1,10 +1,12 @@
 $icon-font-path: "../styles/fonts/" !default; // Change the path to the fonts
 @import "bootstrap-sass-official/vendor/assets/stylesheets/bootstrap";
 
+@import "_mixins.scss"; /* ALL MIXINS */
 @import "_colors.scss"; /*  ALL COLORS */
 @import "_initial.scss"; /*  INITIAL COMPONENETS */
 @import "_navbar.scss"; /*  NAVBAR */
 @import "_index-style.scss"; /* INDEX PAGE */
+@import "_main-style.scss"; /* MAIN PAGE */
 
 
 

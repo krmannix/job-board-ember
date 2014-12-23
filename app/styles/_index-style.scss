@@ -1,12 +1,9 @@
 .well {
-	background: linear-gradient(
-      rgba(255, 255, 255, 0.85), 
-      rgba(255, 255, 255, 0.85)
-    );
-    text-align: center;
-    width: 60%;
-    margin-left: auto;
-    margin-right: auto;
+  @include transparent-background(255, 255, 255, 0.85);
+  text-align: center;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .btn-login {

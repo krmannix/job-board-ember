@@ -1,0 +1,6 @@
+@mixin transparent-background($r, $g, $b, $percent) {
+	background: linear-gradient(
+      rgba($r, $g, $b, $percent), 
+      rgba($r, $g, $b, $percent)
+    );
+}
