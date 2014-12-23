@@ -1,0 +1,30 @@
+html, body {
+	box-sizing: border-box;
+	height: 100%;
+}
+
+body {
+	margin: 70px 0;
+}
+
+html {
+	/* page bg img courtesy National Photo Company: http://commons.wikimedia.org/wiki/File:DCJCC_stage.jpg */
+	background: linear-gradient(
+      rgba(255, 255, 255, 0.45), 
+      rgba(255, 255, 255, 0.45)
+    ),
+    url(../images/bu-marsh.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+
+body {
+	background-color: transparent;
+
+	div.ember-view {
+		height: 100%;
+	}
+}
