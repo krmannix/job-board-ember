@@ -1,0 +1,19 @@
+.well {
+	background: linear-gradient(
+      rgba(255, 255, 255, 0.85), 
+      rgba(255, 255, 255, 0.85)
+    );
+    text-align: center;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn-login {
+	background-color: $bu-primary;
+	color: $bu-secondary;
+}
+
+div.error-message {
+	color: $error-color;
+}
