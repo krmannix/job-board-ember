@@ -15,6 +15,5 @@ BuJobBoard.PostboardRoute = Ember.Route.extend({
 			}));
 		}
 		return {job_postings: job_postings};
-		// return null;
 	}
 });

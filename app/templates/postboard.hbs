@@ -1,5 +1,5 @@
 <div>
-	<div class="container main_container">
+	<div class="container postboard_container">
 		<div class="row">
 			<div class="col-md-3">
 				<ul>
@@ -16,22 +16,17 @@
 				</ul>
 			</div>
 			<div class="col-md-9">
-				<ul>
-					<li>{{job_posting.1.job_title}}</li>
+				<ul class="job-grid">
 					{{#if job_postings.length}}
-						{{#each job_postings}}
-							<li>{{job_title}}jklj</li>
+						{{#each job in job_postings}}
+							<!--{{job-posting-postboard job}}-->
+							<li class="col-md-4">
+								<div class="job-post-container">
+								{{job.job_title}}
+								</div>
+							</li>
 						{{/each}}
 					{{/if}}
-					<li>Hi</li>
-					<li>Hi</li>
-					<li>Hi</li>
-					<li>Hi</li>
-					<li>Hi</li>
-					<li>Hi</li>
-					<li>Hi</li>
-					<li>Hi</li>
-					<li>Hi</li>
 				</ul>
 			</div>
 		</div>
