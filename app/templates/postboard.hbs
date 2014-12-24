@@ -19,20 +19,7 @@
 				<ul class="job-grid">
 					{{#if job_postings.length}}
 						{{#each job in job_postings}}
-							<!--{{job-posting-postboard job}}-->
-							<li class="col-md-4">
-								<div class="job-post-container">
-									<div class="job-title">
-										{{job.job_title}}
-									</div>
-									<div class="company-title">
-										{{job.company_name}}
-									</div>
-									<div class="description-short">
-										{{job.description_full}}
-									</div>
-								</div>
-							</li>
+							{{job-posting-postboard job}}
 						{{/each}}
 					{{/if}}
 				</ul>

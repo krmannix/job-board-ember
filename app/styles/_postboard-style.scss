@@ -48,6 +48,24 @@ ul.job-grid > li {
 		.description-short {
 			margin: 2px 5px;
 		}
+
+		.type-of-job {
+			margin-left: 2px;
+			ul {
+				padding-left: 3px;
+				list-style-type: none;
+				margin-bottom: 5px;
+				li {
+					padding: 2px;
+					border-radius: 3px;
+					display: inline-block;
+					background-color: #666;
+					opacity: 0.75;
+					color: white;
+					font-size: 0.65em;
+				}
+			}
+		}
 	}
 
 }
