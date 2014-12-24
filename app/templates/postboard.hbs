@@ -18,9 +18,7 @@
 			<div class="col-md-9">
 				<ul class="job-grid">
 					{{#if job_postings.length}}
-						{{#each job in job_postings}}
-							{{job-posting-postboard job}}
-						{{/each}}
+							{{job-posting-postboard job_postings}}
 					{{/if}}
 				</ul>
 			</div>
