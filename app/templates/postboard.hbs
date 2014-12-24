@@ -22,7 +22,15 @@
 							<!--{{job-posting-postboard job}}-->
 							<li class="col-md-4">
 								<div class="job-post-container">
-								{{job.job_title}}
+									<div class="job-title">
+										{{job.job_title}}
+									</div>
+									<div class="company-title">
+										{{job.company_name}}
+									</div>
+									<div class="description-short">
+										{{job.description_full}}
+									</div>
 								</div>
 							</li>
 						{{/each}}

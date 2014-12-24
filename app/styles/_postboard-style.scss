@@ -8,7 +8,6 @@
 }
 
 .postboard_container > .row {
-	padding: 10px;
 	margin-top: 20px;
 }
 
@@ -16,13 +15,45 @@
 
 ul.job-grid > li {
 	list-style-type: none;
+	border-radius: 5px;
+	.job-post-container {
+		background-color: #fff;
+		margin-top: 10px;
+		border: 1px solid #555;
+		@include box-shadow(2px, 2px, 5px, 1px, #aaa);
+		@include transition(0.2s, ease-in);
+
+		&:hover {
+			@include transition(0.2s, ease-in);
+			@include box-shadow(2px, 2px, 5px, 2px, #555);
+		}
+
+		.job-title {
+			text-align: center;
+			font-weight: bold;
+			font-size: 1.5em;
+			&.i {
+				background-color: green;
+			}
+			&.f {
+				background-color: red;
+			}
+		}
+
+		.company-title {
+			text-align: center;
+			font-style: italic;
+		}
+
+		.description-short {
+			margin: 2px 5px;
+		}
+	}
+
 }
 
-.job-post-container {
-	background-color: #fff;
-	padding: 5px;
-	margin-top: 5px;
-	border: 1px solid #555;
-	@include box-shadow(2px, 2px, 5px, 1px, #ccc);
-}
+
+
+
+
 

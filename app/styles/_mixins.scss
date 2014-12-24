@@ -10,3 +10,12 @@
   	-webkit-box-shadow: $hor $ver $blur $spread $color;
   	box-shadow:         $hor $ver $blur $spread $color;
 }
+
+@mixin transition($length, $style) {
+	transition-duration: $length;
+	transition-timing-function: $style;
+	-moz-transition-duration: $length;
+	-moz-transition-timing-function: $style;
+	-webkit-transition-duration: $length;
+	-webkit-transition-timing-function: $style;
+}
