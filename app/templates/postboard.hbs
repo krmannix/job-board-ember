@@ -1,24 +1,66 @@
 <div>
 	<div class="container postboard_container">
 		<div class="row">
-			<div class="col-md-3">
+			<div class="col-md-3 left-sidebar">
 				<ul>
-					<li>Hi</li>
-					<li>Hi</li>
-					<li>Hi</li>
-					<li>Hi</li>
-					<li>Hi</li>
-					<li>Hi</li>
-					<li>Hi</li>
-					<li>Hi</li>
-					<li>Hi</li>
-					<li>Hi</li>
+					<li>
+						<div class="input-group search-bar">
+							<input type="text" class="form-control" placeholder="Search" aria-label="Search Bar">
+								<span class="input-group-btn">
+						        	<button class="btn btn-default" type="button">
+						        		<span class="glyphicon glyphicon-search"></span>
+						        	</button>
+						      </span>
+							</span>
+						</div>
+					</li>
+				</ul>
+				<ul class="nav nav-pills nav-stacked">
+					{{!-- {{#if page_names.length}} --}}
+						{{#each term in page_names}}
+							<li {{action "sidebarPageClick" term}}><a href="#">{{term}}</a></li>
+						{{/each}}
+					{{!-- {{/if}} --}}
 				</ul>
 			</div>
-			<div class="col-md-9">
-				<ul class="job-grid">
+			<div class="col-md-9 job-grid">
+				<ul>
 					{{#if job_postings.length}}
-							{{job-posting-postboard job_postings}}
+						{{#each job in job_postings}}
+							{{#newRow}}
+								<div class="row">
+							{{/newRow}}
+							<li class="col-md-4">
+								<div class="job-post-container">
+									<div {{bind-attr class=":job-title job.full_time"}}>{{job.job_title}}</div>
+									<div class="company-title">{{job.company_name}}</div>
+									<div class="description-short">{{job.description_full}}</div>
+									<div class="flex-box-model">
+										<div class="type-of-job box box1">
+											<ul>
+												{{#each job.type_of_job}}
+													<li>{{this}}</li>
+												{{/each}}
+											</ul>
+										</div>
+			                    		<div class="box box2"></div>
+				                    	<div class="save-job-button box box3">
+				                    		<button class="btn btn-default" 
+				                    		  {{bind-attr id="job.id"}} 
+				                    		  type="button" 
+				                    		  {{action "addJobClick" job.id}}
+				                    		  >
+					                    		<span class="glyphicon glyphicon-plus"></span>
+					                    	</button>
+					                    </div>
+					                </div>
+					            </div>
+					        </li>
+					        {{#endRow}}
+					        	</div>
+					        {{/endRow}}
+					    {{/each}}
+						{{!-- {{job-posting-postboard job_postings}} --}}
 					{{/if}}
 				</ul>
 			</div>
