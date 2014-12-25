@@ -1,24 +1,32 @@
 <div>
 	<div class="container postboard_container">
 		<div class="row">
-			<div class="col-md-3">
+			<div class="col-md-3 left-sidebar">
 				<ul>
-					<li>Hi</li>
-					<li>Hi</li>
-					<li>Hi</li>
-					<li>Hi</li>
-					<li>Hi</li>
-					<li>Hi</li>
-					<li>Hi</li>
-					<li>Hi</li>
-					<li>Hi</li>
-					<li>Hi</li>
+					<li>
+						<div class="input-group search-bar">
+							<input type="text" class="form-control" placeholder="Search" aria-label="Search Bar">
+								<span class="input-group-btn">
+						        	<button class="btn btn-default" type="button">
+						        		<span class="glyphicon glyphicon-search"></span>
+						        	</button>
+						      </span>
+							</span>
+						</div>
+					</li>
+				</ul>
+				<ul class="nav nav-pills nav-stacked">
+					{{!-- {{#if page_names.length}} --}}
+						{{#each term in page_names}}
+							<li {{action "sidebarPageClick" term}}><a href="#">{{term}}</a></li>
+						{{/each}}
+					{{!-- {{/if}} --}}
 				</ul>
 			</div>
-			<div class="col-md-9">
-				<ul class="job-grid">
+			<div class="col-md-9 job-grid">
+				<ul>
 					{{#if job_postings.length}}
-							{{job-posting-postboard job_postings}}
+						{{job-posting-postboard job_postings}}
 					{{/if}}
 				</ul>
 			</div>

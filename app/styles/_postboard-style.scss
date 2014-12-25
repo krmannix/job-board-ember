@@ -1,3 +1,6 @@
+$save-job-button-size: 35px;
+$job-post-side-margin: 2px;
+
 /* Container */
 
 .postboard_container {
@@ -15,7 +18,7 @@
 
 /* GRID */
 
-ul.job-grid {
+.job-grid > ul {
 
 	margin-bottom: 20px;
 
@@ -25,7 +28,7 @@ ul.job-grid {
 		.job-post-container {
 			background-color: #fff;
 			margin-top: 10px;
-			border: 1px solid #555;
+			// border: 1px solid #fff;
 			border-radius: 3px;
 			@include box-shadow(2px, 2px, 5px, 1px, #aaa);
 			@include transition(0.1s, ease-in);
@@ -53,11 +56,12 @@ ul.job-grid {
 			}
 
 			.description-short {
-				margin: 2px 5px;
+				margin: $job-post-side-margin 5px;
 			}
 
 			.type-of-job {
-				margin-left: 2px;
+				margin-left: $job-post-side-margin;
+				display: inline-block;
 				ul {
 					padding-left: 3px;
 					list-style-type: none;
@@ -74,10 +78,42 @@ ul.job-grid {
 					}
 				}
 			}
+
+			.save-job-button {
+				display: inline-block;
+				margin-bottom: 5px;
+			 	margin-right: $job-post-side-margin*2;
+			 	text-align: right;
+			}
 		}
 	}
 }
 
+.flex-box-model {
+    /* flexbox setup */
+    display: -webkit-flex;
+    -webkit-flex-direction: row;
+
+    display: flex;
+    flex-direction: row;
+
+    > div {
+		-webkit-flex: 1 1 auto;
+	    flex: 1 1 auto;
+	}
+}
+/* SEARCH */
+
+.left-sidebar > ul {
+	list-style-type: none;
+	li {
+		font-size: 2em;
+		text-align: center;
+	}
+	.search-bar {
+		margin-bottom: 10px;
+	}
+}
 
 
 
