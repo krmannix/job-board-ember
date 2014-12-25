@@ -85,6 +85,18 @@ $job-post-side-margin: 2px;
 			 	margin-right: $job-post-side-margin*2;
 			 	text-align: right;
 			}
+
+			.clicked {
+				background-color: $bu-primary;
+
+				&:hover {
+					background-color: darken($bu-primary, 20%);
+				}
+
+				&:active {
+					background-color: darken($bu-primary, 20%);
+				}
+			}
 		}
 	}
 }
