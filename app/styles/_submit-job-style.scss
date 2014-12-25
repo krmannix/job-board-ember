@@ -1,0 +1,44 @@
+$margin-side: 80px;
+
+.submit-job-group {
+
+		.submit-job-title {
+			text-align: center;
+		}
+
+		.input-group {
+			margin-bottom: 5px;
+			margin-right: $margin-side;
+			margin-left: $margin-side;
+		}
+
+		.btn-group {
+			margin-bottom: 5px;
+			margin-right: $margin-side;
+			margin-left: $margin-side;
+		}
+
+		.btn-group-vertical {
+			margin-bottom: 5px;
+			margin-right: $margin-side;
+			margin-left: $margin-side;
+		}
+
+		.school-group {
+			text-align: center;
+		}
+
+		.school {
+			text-align: right;
+			button {
+				display: inline-block;
+			}
+		}
+
+		.btn-login {
+			clear: both;
+			background-color: $bu-primary;
+			color: $bu-secondary;
+		}
+
+}

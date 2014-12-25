@@ -90,11 +90,11 @@ $job-post-side-margin: 2px;
 				background-color: $bu-primary;
 
 				&:hover {
-					background-color: darken($bu-primary, 20%);
+					background-color: darken($bu-primary, 5%);
 				}
 
 				&:active {
-					background-color: darken($bu-primary, 20%);
+					background-color: darken($bu-primary, 5%);
 				}
 			}
 		}
