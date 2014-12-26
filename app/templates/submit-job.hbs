@@ -53,6 +53,9 @@
 					<div class="alert alert-danger hidden" id="danger-fields" role="alert">
 						<b>Whoops!</b> Some fields were not filled out.
 					</div>
+					<div class="alert alert-danger hidden" id="danger-email" role="alert">
+						Please use a valid email address.
+					</div>
 
 					<div class="button-grid well flex-box-model">
 						{{!-- <div class="row"> --}}
@@ -69,7 +72,7 @@
 							<div class="box box2"></div>
 
 							<div class="type-group box box2">
-								<div class="btn-group" role="group">
+								<div class="btn-group" id="jquery-click-type-group" role="group">
 									<button type="button" class="btn btn-default" id="full">Full-time</button>
 									<button type="button" class="btn btn-default" id="intern">Internship</button>
 								</div>
@@ -84,6 +87,9 @@
 				</div>
 
 				<div>
+					<div class="alert alert-success hidden" id="success-submit" role="alert">
+						Post created!
+					</div>
 					<button {{action "job_submit" schools}} type="button" class="btn btn-lg btn-login">Login</button>
 				</div>
 			</div>
