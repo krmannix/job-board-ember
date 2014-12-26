@@ -1,3 +1,10 @@
+{{!-- TO DO
+
+	NEED TO MAKE IT COMPATABLE WITH SMALLER SCREENS
+
+ --}}
+
+
 <div>
 	<div class="container postboard_container">
 		<div class="row">
@@ -26,41 +33,49 @@
 			<div class="col-md-9 submit-job-group">
 				<h2 class="submit-job-title">Submit a Job</h2>
 
-				<div class="input-group input-group-lg pull-right">
-					<input type="text" class="form-control" placeholder="Company" valueBinding="controller.submitCompanyName">
-				</div>
-
-				<div class="input-group input-group-lg">
-					<input type="text" class="form-control" placeholder="Job Title" valueBinding="controller.submitJobTitle">
-				</div>
-
-				<div class="input-group input-group-lg pull-right">
-					<input type="text" class="form-control" placeholder="Contact email" valueBinding="controller.submitEmail">
-				</div>
-
-				<div class="input-group input-group-lg desc-input">
-					<input type="text" class="form-control" placeholder="Short description." valueBinding="controller.submitDescription">
-				</div>
-
-				
-
-				<div class="btn-group" role="group">
-					<button type="button" class="btn btn-default">Full-time</button>
-					<button type="button" class="btn btn-default">Internship</button>
-				</div>
-
-				<div class="school-dropdown-group pull-right">
-					<div class="school-group btn-group-vertical">
-						{{#each school in schools}}
-							<div class="school">
-								<span class="glyphicon glyphicon-ok hide" {{bind-attr id="school"}}></span>
-								<button type="button" class="btn btn-default">{{school}}</button>
-							</div>
-						{{/each}}
+				<div class="submission-field">
+					<div class="input-group input-group-lg pull-right">
+						<input type="text" class="form-control" placeholder="Company" valueBinding="controller.submitCompanyName">
 					</div>
+
+					<div class="input-group input-group-lg">
+						<input type="text" class="form-control" placeholder="Job Title" valueBinding="controller.submitJobTitle">
+					</div>
+
+					<div class="input-group input-group-lg pull-right">
+						<input type="text" class="form-control" placeholder="Contact email" valueBinding="controller.submitEmail">
+					</div>
+
+					<div class="input-group input-group-lg desc-input">
+						<textarea class="form-control" placeholder="Short description" valueBinding="controller.submitDescription"></textarea>
+					</div>
+
+					<div class="button-grid well flex-box-model">
+						{{!-- <div class="row"> --}}
+							<div class="school-group box box1">
+								{{#each school in schools}}
+									<label>
+										<input type="checkbox" {{bind-attr id="school"}}>  {{school}}</label>
+								{{/each}}
+							</div>
+
+							<div class="box box2"></div>
+
+							<div class="type-group box box2">
+								<div class="btn-group" role="group">
+									<button type="button" class="btn btn-default">Full-time</button>
+									<button type="button" class="btn btn-default">Internship</button>
+								</div>
+							</div>
+						{{!-- </div> --}}
+					</div>
+
+					
 				</div>
 
-				<button {{action "job_submit"}} type="button" class="btn btn-login btn-lg">Login</button>
+				<div>
+					<button {{action "job_submit"}} type="button" class="btn btn-lg btn-login">Login</button>
+				</div>
 			</div>
 		</div>
 	</div>

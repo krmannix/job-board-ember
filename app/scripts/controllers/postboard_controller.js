@@ -1,8 +1,10 @@
 BuJobBoard.PostboardController = Ember.ObjectController.extend({
 	actions: {
 		sidebarPageClick: function(term) {
-			if (term.toLowerCase() === "saved jobs") {
+			if (term.toLowerCase() === "submit a post") {
 				this.transitionToRoute('submit-job');
+			} else if (term.toLowerCase() === "saved jobs") {
+				//this.transitionToRoute('submit-job');
 			}
 		},
 		addJobClick: function(id) {

@@ -1,44 +1,81 @@
 $margin-side: 80px;
+$input-width: 300px;
 
 .submit-job-group {
 
 		.submit-job-title {
 			text-align: center;
 		}
+		.submission-field {
+			display: block;
 
-		.input-group {
-			margin-bottom: 5px;
-			margin-right: $margin-side;
-			margin-left: $margin-side;
-		}
-
-		.btn-group {
-			margin-bottom: 5px;
-			margin-right: $margin-side;
-			margin-left: $margin-side;
-		}
-
-		.btn-group-vertical {
-			margin-bottom: 5px;
-			margin-right: $margin-side;
-			margin-left: $margin-side;
-		}
-
-		.school-group {
-			text-align: center;
-		}
-
-		.school {
-			text-align: right;
-			button {
-				display: inline-block;
+			.form-control{
+			  -webkit-border-radius: 8px;
+			     -moz-border-radius: 8px;
+			          border-radius: 8px;
+			}
+			.input-group {
+				width: $input-width;
+				margin-bottom: 5px;
+				margin-right: $margin-side;
+				margin-left: $margin-side;
+				textarea {
+					overflow: scroll;
+					resize: none;
+				}
+			}
+			.btn-group {
+				margin-bottom: 5px;
+				margin-right: $margin-side;
+				margin-left: $margin-side;
+			}
+			.button-grid {
+				width: 80%;
+				.type-group {
+					text-align: center;
+					min-width: 45%;
+					.btn-group {
+						margin-top: 20%;
+						padding: 0;
+						margin: 0;
+						button {
+							margin: 0;
+						}
+					}
+				}
+				.box2 {
+					min-width: 10%;
+				}
+				.school-group {
+					font-size: 1em;
+					text-align: center;
+					min-width: 45%;
+					label {
+						display: block;
+					}
+				}
 			}
 		}
 
 		.btn-login {
-			clear: both;
 			background-color: $bu-primary;
 			color: $bu-secondary;
+			margin-left: 45%;
+			width: 10%;
+		}
+
+		.flex-box-model {
+		    /* flexbox setup */
+		    display: -webkit-flex;
+		    -webkit-flex-direction: row;
+
+		    display: flex;
+		    flex-direction: row;
+
+		    > div {
+				-webkit-flex: 1 1 auto;
+			    flex: 1 1 auto;
+			}
 		}
 
 }
