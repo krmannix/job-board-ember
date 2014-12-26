@@ -35,19 +35,23 @@
 
 				<div class="submission-field">
 					<div class="input-group input-group-lg pull-right">
-						<input type="text" class="form-control" placeholder="Company" valueBinding="controller.submitCompanyName">
+						{{input type="text" class="form-control" placeholder="Company" valueBinding="controller.submitCompanyName"}}
 					</div>
 
 					<div class="input-group input-group-lg">
-						<input type="text" class="form-control" placeholder="Job Title" valueBinding="controller.submitJobTitle">
+						{{input type="text" class="form-control" placeholder="Job Title" valueBinding="controller.submitJobTitle"}}
 					</div>
 
 					<div class="input-group input-group-lg pull-right">
-						<input type="text" class="form-control" placeholder="Contact email" valueBinding="controller.submitEmail">
+						{{input type="text" class="form-control" placeholder="Contact email" valueBinding="controller.submitEmail"}}
 					</div>
 
 					<div class="input-group input-group-lg desc-input">
-						<textarea class="form-control" placeholder="Short description" valueBinding="controller.submitDescription"></textarea>
+						{{textarea class="form-control" placeholder="Short description" valueBinding="controller.submitDescription"}}
+					</div>
+
+					<div class="alert alert-danger hidden" id="danger-fields" role="alert">
+						<b>Whoops!</b> Some fields were not filled out.
 					</div>
 
 					<div class="button-grid well flex-box-model">
@@ -55,16 +59,22 @@
 							<div class="school-group box box1">
 								{{#each school in schools}}
 									<label>
-										<input type="checkbox" {{bind-attr id="school"}}>  {{school}}</label>
+										<input type="checkbox" {{bind-attr id="school.id"}}>  {{school.name}}</label>
 								{{/each}}
+								<div class="alert alert-danger hidden" id="danger-school" role="alert">
+									Please choose at least one school.
+								</div>
 							</div>
 
 							<div class="box box2"></div>
 
 							<div class="type-group box box2">
 								<div class="btn-group" role="group">
-									<button type="button" class="btn btn-default">Full-time</button>
-									<button type="button" class="btn btn-default">Internship</button>
+									<button type="button" class="btn btn-default" id="full">Full-time</button>
+									<button type="button" class="btn btn-default" id="intern">Internship</button>
+								</div>
+								<div class="alert alert-danger hidden" id="danger-type" role="alert">
+									Please choose full-time or internship.
 								</div>
 							</div>
 						{{!-- </div> --}}
@@ -74,7 +84,7 @@
 				</div>
 
 				<div>
-					<button {{action "job_submit"}} type="button" class="btn btn-lg btn-login">Login</button>
+					<button {{action "job_submit" schools}} type="button" class="btn btn-lg btn-login">Login</button>
 				</div>
 			</div>
 		</div>
