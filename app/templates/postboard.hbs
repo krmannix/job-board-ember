@@ -1,5 +1,55 @@
 <div>
+	<div id="overlay" class="hidden"></div>
 	<div class="container postboard_container">
+		<!-- Modal Block -->
+		<div class="job-post-container-big hidden">
+			<div class="job-title i">
+				Job Ttitlle
+				<button type="button" class="btn btn-default close-button" {{action "closeJobModal"}}>Close</button>
+			</div>
+			
+			<div class="company-title">fsdjaslk</div>
+			<div class="contact-info flex-box-model well">
+				<table>
+					<tr>
+						<td><div class="contact-name box box1">Kevin Mannix</div></td>
+						<td><div class="contact-position box box2">CEO</div></td>
+						<td><div class="contact-email box box3">kmannix@example.com</div></td>
+					</tr>
+				</table>
+			</div>
+			<div class="description-long">
+				My experience in the nature study area was full of surprises. First of all, many unexpected creatures crossed our path. For example, as soon as we left the parking area and entered the grassy path, a long snake slithered along the edge of the high grass and quickly disappeared. In addition, I was surprised by how colorful the grasses, which from a distance all appear to be green, actually are. Specifically, the primarily green landscape is dotted with countless purple tassels and brown stalks. Finally and most importantly, I was unprepared for how quickly I felt surrounded by nature. Despite the occasional noise from passing cars and airplanes, the high prairie grasses and rolling pathways create a sense that one is removed from civilization. Altogether, the nature study area unexpectedly allows one to enjoy an ever-changing natural environment without leaving Moraine’s suburban campus.
+			</div>
+			<div class="prereqs">
+				<h5><span class="label label-primary">Prerequisites</span></h5>
+				<ul class="list-group prereq-list">
+					<li class="list-group-item">Cras justo odio</li>
+					<li class="list-group-item">Dapibus ac facilisis in</li>
+					<li class="list-group-item">Morbi leo risus</li>
+					<li class="list-group-item">Porta ac consectetur ac</li>
+					<li class="list-group-item">Vestibulum at eros</li>
+				</ul>
+			</div>
+			<div class="flex-box-model">
+				<div class="type-of-job box box1">
+					<ul>
+						<li>Hello</li>
+						<li>Nice try</li>
+					</ul>
+				</div>
+	    		<div class="box box2"></div>
+	        	<div class="save-job-button box box3">
+	        		<button class="btn btn-default" 
+	        		  type="button" 
+	        		  {{action "addJobClick" job.id}}
+	        		>
+	            		<span class="glyphicon glyphicon-plus"></span>
+	            	</button>
+	            </div>
+	        </div>
+		</div>
+		<!-- END Modal Block -->
 		<div class="row">
 			<div class="col-md-3 left-sidebar">
 				<ul>
@@ -16,11 +66,11 @@
 					</li>
 				</ul>
 				<ul class="nav nav-pills nav-stacked">
-					{{!-- {{#if page_names.length}} --}}
+					{{#if page_names.length}}
 						{{#each term in page_names}}
 							<li {{action "sidebarPageClick" term}}><a href="#">{{term}}</a></li>
 						{{/each}}
-					{{!-- {{/if}} --}}
+					{{/if}}
 				</ul>
 			</div>
 			<div class="col-md-9 job-grid">
@@ -31,7 +81,7 @@
 								<div class="row">
 							{{/newRow}}
 							<li class="col-md-4">
-								<div class="job-post-container">
+								<div class="job-post-container" {{action "showJobModal" job.id}}>
 									<div {{bind-attr class=":job-title job.full_time"}}>{{job.job_title}}</div>
 									<div class="company-title">{{job.company_name}}</div>
 									<div class="description-short">{{job.description_full}}</div>
@@ -49,7 +99,7 @@
 				                    		  {{bind-attr id="job.id"}} 
 				                    		  type="button" 
 				                    		  {{action "addJobClick" job.id}}
-				                    		  >
+				                    		>
 					                    		<span class="glyphicon glyphicon-plus"></span>
 					                    	</button>
 					                    </div>
@@ -66,4 +116,5 @@
 			</div>
 		</div>
 	</div>
+	
 </idv>

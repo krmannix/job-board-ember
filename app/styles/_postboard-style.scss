@@ -1,5 +1,9 @@
 $save-job-button-size: 35px;
 $job-post-side-margin: 2px;
+$container-border-radius: 3px;
+$job-post-container-bg-color: #fff;
+$internship-bg-color: green;
+$fulltime-bg-color: red;
 
 /* Container */
 
@@ -26,10 +30,9 @@ $job-post-side-margin: 2px;
 		list-style-type: none;
 		border-radius: 5px;
 		.job-post-container {
-			background-color: #fff;
+			background-color: $job-post-container-bg-color;
 			margin-top: 10px;
-			// border: 1px solid #fff;
-			border-radius: 3px;
+			border-radius: $container-border-radius;
 			@include box-shadow(2px, 2px, 5px, 1px, #aaa);
 			@include transition(0.1s, ease-in);
 
@@ -39,14 +42,15 @@ $job-post-side-margin: 2px;
 			}
 
 			.job-title {
+				border-radius: $container-border-radius $container-border-radius 0 0;
 				text-align: center;
 				font-weight: bold;
 				font-size: 1.5em;
 				&.i {
-					background-color: green;
+					background-color: $internship-bg-color;
 				}
 				&.f {
-					background-color: red;
+					background-color: $fulltime-bg-color;
 				}
 			}
 
@@ -128,6 +132,148 @@ $job-post-side-margin: 2px;
 		margin-bottom: 10px;
 	}
 }
+
+/* MODAL */
+
+#overlay {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0.5;
+    z-index: 4;
+}
+
+.job-post-container-big {
+	background-color: $job-post-container-bg-color;
+	border-radius: $container-border-radius;
+	z-index: 10;
+	opacity: 1.0;
+	background-color: white;
+	position: absolute;
+	min-width: 40%;
+	max-width: 50%;
+	//@include box-shadow(2px, 2px, 5px, 1px, #aaa);
+	@include transition(0.1s, ease-in);
+
+	&:hover {
+		@include transition(0.1s, ease-in);
+		@include box-shadow(2px, 2px, 5px, 2px, #555);
+	}
+
+	.job-title {
+		border-radius: $container-border-radius $container-border-radius 0 0;
+		text-align: center;
+		font-weight: bold;
+		font-size: 1.7em;
+		&.i {
+			background-color: $internship-bg-color;
+		}
+		&.f {
+			background-color: $fulltime-bg-color;
+		}
+		.close-button {
+			max-width: 50px;
+			max-height: 30px;
+			position: absolute;
+			right: 5px;
+			top: 5px;
+			padding: 2px;
+		}
+	}
+
+	.company-title {
+		margin-top: 10px;
+		text-align: center;
+		font-style: italic;
+	}
+
+	.contact-info {
+		margin-top: 10px;
+		width: 90%;
+		padding: 7px;
+		text-align: center;
+		background-color: #444;
+		> table {
+			margin: auto;
+			td {
+				width: 33%;
+			}
+		}
+	}
+
+	.prereqs {
+		width: 90%;
+		padding: 2px;
+		text-align: center;
+		margin: auto;
+		h5 {
+			text-align: left;
+		}
+		.prereq-list {
+			width: 80%;
+			margin: auto;
+		} 
+	}
+
+	.contact-position {
+		font-weight: bold;
+	}
+
+	.description-long {
+		margin: 5px 10px;
+	}
+
+	.type-of-job {
+		margin-left: $job-post-side-margin;
+		display: inline-block;
+		position: relative;
+		ul {
+			position: absolute;
+			padding-left: 3px;
+			list-style-type: none;
+			bottom: 0;
+			li {
+				padding: 2px;
+				margin-right: 4px;
+				border-radius: 3px;
+				display: inline-block;
+				background-color: #666;
+				opacity: 0.75;
+				color: white;
+				font-size: 1em;
+			}
+		}
+	}
+
+	.save-job-button {
+		display: inline-block;
+		margin-bottom: 5px;
+	 	margin-right: $job-post-side-margin*2;
+	 	text-align: right;
+	}
+
+	.clicked {
+		background-color: $bu-primary;
+
+		&:hover {
+			background-color: darken($bu-primary, 5%);
+		}
+
+		&:active {
+			background-color: darken($bu-primary, 5%);
+		}
+	}
+}
+
+
+
+
+
+
+
 
 
 
