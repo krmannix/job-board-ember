@@ -66,11 +66,14 @@
 					</li>
 				</ul>
 				<ul class="nav nav-pills nav-stacked">
-					{{#if page_names.length}}
+					{{!-- {{#if page_names.length}}
 						{{#each term in page_names}}
 							<li {{action "sidebarPageClick" term}}><a href="#">{{term}}</a></li>
 						{{/each}}
-					{{/if}}
+					{{/if}} --}}
+					<li {{action "sidebarPageClick" "postboard"}} class="active"><a href="#">Postboard</a></li>
+					<li {{action "sidebarPageClick" "saved jobs"}}><a href="#">Saved Jobs</a></li>
+					<li {{action "sidebarPageClick" "submit a post"}}><a href="#">Submit a Post</a></li>
 				</ul>
 			</div>
 			<div class="col-md-9 job-grid">

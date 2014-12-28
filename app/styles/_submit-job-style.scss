@@ -74,6 +74,36 @@ $input-width: 300px;
 					}
 				}
 			}
+			.prereq-submit-job {
+				width: 80%;
+				margin-right: $margin-side;
+				margin-left: $margin-side;
+				.list-group {
+					list-style-type: none;
+				}
+				button {
+					display: inline-block;
+					width: 8%;
+					margin-top: 1px;
+				}
+				.button-remove {
+					border-radius: 0;
+				}
+				.button-plus {
+					border-bottom-left-radius: 0px;
+					border-top-left-radius: 0px;
+				}
+				input {
+					margin-top: 1px;
+					border-bottom-right-radius: 0px;
+					border-top-right-radius: 0px;
+					width: 60%;
+					display: inline-block;
+				}
+				.input-group {
+					width: 80%;
+				}
+			}
 		}
 
 		.btn-login {

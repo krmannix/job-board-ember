@@ -22,12 +22,10 @@ Ember.Handlebars.helper('job-posting-postboard', function(value, options) {
 
 Handlebars.registerHelper('newRow', function(options) {
     var fnTrue=options.fn, fnFalse=options.inverse;
-    console.log(options.data.view.contentIndex);
     return options.data.view.contentIndex % 3 === 0 ? fnTrue() : fnFalse();
 });
 
 Handlebars.registerHelper('endRow', function(options) {
     var fnTrue=options.fn, fnFalse=options.inverse;
-    console.log(options.data.view.contentIndex);
     return (options.data.view.contentIndex + 1) % 3 === 0 ? fnTrue() : fnFalse();
 });

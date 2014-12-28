@@ -23,11 +23,14 @@
 					</li>
 				</ul>
 				<ul class="nav nav-pills nav-stacked">
-					{{#if page_names.length}}
+					{{!-- {{#if page_names.length}}
 						{{#each term in page_names}}
 							<li {{action "sidebarPageClick" term}}><a href="#">{{term}}</a></li>
 						{{/each}}
-					{{/if}}
+					{{/if}} --}}
+					<li {{action "sidebarPageClick" "postboard"}}><a href="#">Postboard</a></li>
+					<li {{action "sidebarPageClick" "saved jobs"}}><a href="#">Saved Jobs</a></li>
+					<li {{action "sidebarPageClick" "submit a post"}} class="active"><a href="#">Submit a Post</a></li>
 				</ul>
 			</div>
 			<div class="col-md-9 submit-job-group">
@@ -55,6 +58,66 @@
 					</div>
 					<div class="alert alert-danger hidden" id="danger-email" role="alert">
 						Please use a valid email address.
+					</div>
+
+					<div class="prereq-submit-job">
+						<ul class="list-group">
+							<li class="item-1">
+								<div class="input-group">
+									{{input type="text" class="form-control" valueBinding="prereq-1" placeholder="Prerequisite"}}
+									<button type="button" class="btn btn-default button-remove">
+										<span class="glyphicon glyphicon-remove"></span>
+									</button>
+									<button {{action "addPrereq" "1"}} type="button" class="btn btn-default button-plus">
+										<span class="glyphicon glyphicon-plus"></span>
+									</button>
+								</div>
+							</li>
+							<li class="item-2 hidden">
+								<div class="input-group">
+									{{input type="text" class="form-control" valueBinding="prereq-2" placeholder="Prerequisite"}}
+									<button {{action "removePrereq" "2"}} type="button" class="btn btn-default button-remove">
+										<span class="glyphicon glyphicon-remove"></span>
+									</button>
+									<button {{action "addPrereq" "2"}} type="button" class="btn btn-default button-plus">
+										<span class="glyphicon glyphicon-plus"></span>
+									</button>
+								</div>
+							</li>
+							<li class="item-3 hidden">
+								<div class="input-group">
+									{{input type="text" class="form-control" valueBinding="prereq-3" placeholder="Prerequisite"}}
+									<button {{action "removePrereq" "3"}} type="button" class="btn btn-default button-remove">
+										<span class="glyphicon glyphicon-remove"></span>
+									</button>
+									<button {{action "addPrereq" "3"}} type="button" class="btn btn-default button-plus">
+										<span class="glyphicon glyphicon-plus"></span>
+									</button>
+								</div>
+							</li>
+							<li class="item-4 hidden">
+								<div class="input-group">
+									{{input type="text" class="form-control" valueBinding="prereq-4" placeholder="Prerequisite"}}
+									<button {{action "removePrereq" "4"}} type="button" class="btn btn-default button-remove">
+										<span class="glyphicon glyphicon-remove"></span>
+									</button>
+									<button {{action "addPrereq" "4"}} type="button" class="btn btn-default button-plus">
+										<span class="glyphicon glyphicon-plus"></span>
+									</button>
+								</div>
+							</li>
+							<li class="item-5 hidden">
+								<div class="input-group">
+									{{input type="text" class="form-control" valueBinding="prereq-5" placeholder="Prerequisite"}}
+									<button {{action "removePrereq" "5"}} type="button" class="btn btn-default button-remove">
+										<span class="glyphicon glyphicon-remove"></span>
+									</button>
+									<button type="button" class="btn btn-default button-plus">
+										<span class="glyphicon glyphicon-plus"></span>
+									</button>
+								</div>
+							</li>
+						</ul>
 					</div>
 
 					<div class="button-grid well flex-box-model">

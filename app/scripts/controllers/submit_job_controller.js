@@ -35,6 +35,44 @@ BuJobBoard.SubmitJobController = Ember.ObjectController.extend({
 		},
 		sidebarPageClick: function() {
 			this.transitionToRoute('postboard');
+		},
+		addPrereq: function(number) {
+			console.log("num " + number);
+			switch (parseInt(number)) {
+				case 1:
+					Ember.$(".item-2").removeClass("hidden");
+					break;
+				case 2:
+					Ember.$(".item-3").removeClass("hidden");
+					break;
+				case 3:
+					Ember.$(".item-4").removeClass("hidden");
+					break;
+				case 4:
+					Ember.$(".item-5").removeClass("hidden");
+					break;
+			}
+		},
+		removePrereq: function(number) {
+			console.log("num " + number);
+			switch (parseInt(number)) {
+				case 2:
+					Ember.$(".item-2").addClass("hidden");
+					Ember.$(".item-2 .input-group input").val('');
+					break;
+				case 3:
+					Ember.$(".item-3").addClass("hidden");
+					Ember.$(".item-3 .input-group input").val('');
+					break;
+				case 4:
+					Ember.$(".item-4").addClass("hidden");
+					Ember.$(".item-4 .input-group input").val('');
+					break;
+				case 5:
+					Ember.$(".item-5").addClass("hidden");
+					Ember.$(".item-5 .input-group input").val('');
+					break;
+			}
 		}
 	}
 });
