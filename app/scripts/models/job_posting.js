@@ -5,5 +5,6 @@ BuJobBoard.JobPosting = Ember.Object.extend({
 	full_time: null,
 	description_full: null,
 	contact_email: null,
+	schools: null,
 	id: null
 });
