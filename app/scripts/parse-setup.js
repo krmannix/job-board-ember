@@ -1,5 +1,5 @@
 BuJobBoard.ApplicationAdapter = EmberParseAdapter.Adapter.extend({
 	applicationId: 'xxxxxxxxxxxxxxx',
-	restApiId: 'xxxxxxxxxxxxxxx',
+	restApiId: 'yyyyyyyyyyyy',
 	javascriptId: 'xxxxxxxxxxxxxxx'
 });
