@@ -3,13 +3,16 @@
 	<h4 class="primary-color">Enter your information to login</h4>
     <div class="form-group">
     	<label for="uni-email">
-    	{{input type="email" class="form-control" id="uni-email" placeHolder="Email"  valueBinding="controller.userEmail"}}
+    	{{input type="email" class="form-control" id="uni-email" placeholder="Email"  valueBinding="controller.userEmail"}}
     </div>
     <div class="form-group">
     	<label for="uni-id">
-    	{{input type="text" class="form-control" id="uni-id" placeHolder="ID #"  valueBinding="controller.userId"}}
+    	{{input type="text" class="form-control" id="uni-id" placeholder="ID #"  valueBinding="controller.userId"}}
     </div>
-    <button {{action "student_submit"}} type="button" class="btn btn-login btn-lg">Login</button>
+    <div class="login-buttons">
+        <button {{action "student_signup"}} type="button" class="btn btn-login btn-lg">Sign Up</button>
+        <button {{action "student_submit"}} type="button" class="btn btn-login btn-lg">Login</button>
+    </div>
     <div class="error-message">
     	<h5 class="text-danger">{{controller.errorMessage}}</h5>
     </div>

@@ -6,10 +6,15 @@
   margin-right: auto;
 }
 
-.btn-login {
-	background-color: $bu-primary;
-	color: $bu-secondary;
+.login-buttons {
+	.btn-login {
+		background-color: $bu-primary;
+		color: $bu-secondary;
+		margin-left: 10px;
+		margin-right: 10px;
+	}
 }
+
 
 #login-spin {
 	height: 100px;
