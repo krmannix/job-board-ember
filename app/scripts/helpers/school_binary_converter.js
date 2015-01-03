@@ -1,7 +1,7 @@
 SchoolBinaryConverter = {
-	COM: 0001,
-	ENG: 0010,
-	SMG: 0100,
+	COM: 1,
+	ENG: 10,
+	SMG: 100,
 	CAS: 1000,
 	schools: [
 				{name: "College of Communication", id: "com"},
@@ -14,10 +14,12 @@ SchoolBinaryConverter = {
 		if (school_array.length > 0 && school_array[0].id) {
 			for (var i = 0; i < school_array.length; i++) {
 				var school = school_array[i];
+				console.log(school.id);
 				if (school.id === "eng") t += this.ENG;
 				else if (school.id === "smg") t += this.SMG;
 				else if (school.id === "cas") t += this.CAS;
 				else if (school.id === "com") t += this.COM;
+				console.log(t);
 			}
 		}
 		return t;

@@ -4,7 +4,7 @@ BuJobBoard.PostboardRoute = Ember.Route.extend({
 		var job_postings = [];
 		for (var i = 0; i < 10; i++) {
 			var k = chance.word();
-			job_postings.push(BuJobBoard.JobPosting.create({
+			job_postings.push(BuJobBoard.JobPost.create({
 				job_title: k,
 				company_name: chance.word(),
 				type_of_job: [chance.string({length: 3}), chance.string({length: 3})],

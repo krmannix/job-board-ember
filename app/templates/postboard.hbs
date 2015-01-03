@@ -83,8 +83,9 @@
 							{{#newRow}}
 								<div class="row">
 							{{/newRow}}
+							{{!-- JOB POST TEMPLATE --}}
 							<li class="col-md-4">
-								<div class="job-post-container" {{action "showJobModal" job.id}}>
+								<div class="job-post-container">
 									<div {{bind-attr class=":job-title job.full_time"}}>{{job.job_title}}</div>
 									<div class="company-title">{{job.company_name}}</div>
 									<div class="description-short">{{job.description_full}}</div>
@@ -98,6 +99,9 @@
 										</div>
 			                    		<div class="box box2"></div>
 				                    	<div class="save-job-button box box3">
+				                    		<button class="btn btn-default" type="button" {{action "showJobModal" job.id}}>
+			                    				<span class="glyphicon glyphicon-zoom-in"></span>
+			                    			</button>
 				                    		<button class="btn btn-default" 
 				                    		  {{bind-attr id="job.id"}} 
 				                    		  type="button" 
@@ -109,6 +113,7 @@
 					                </div>
 					            </div>
 					        </li>
+							{{!-- END JOB POST TEMPLATE --}}
 					        {{#endRow}}
 					        	</div>
 					        {{/endRow}}

@@ -136,11 +136,11 @@
 
 							<div class="type-group box box2">
 								<div class="btn-group" data-toggle="buttons">
-							        <label class="btn btn-default">
-							            <input type="radio" name="year" value="Full-time" id="full">Full-time
+							        <label class="btn btn-default" id="full">
+							            <input type="radio" name="year" value="Full-time">Full-time
 							        </label>
-							        <label class="btn btn-default active">
-							            <input type="radio" name="year" value="Internship" id="intern" checked="">Internship
+							        <label class="btn btn-default active" id="intern">
+							            <input type="radio" name="year" value="Internship" checked="">Internship
 							        </label>
 							    </div>
 								<div class="alert alert-danger hidden" id="danger-type" role="alert">
@@ -156,6 +156,9 @@
 				<div>
 					<div class="alert alert-success hidden" id="success-submit" role="alert">
 						Post created!
+					</div>
+					<div class="alert alert-danger hidden" id="error-submit" role="alert">
+						<b>Error on job submission: </b>{{submitError}}
 					</div>
 					<button {{action "job_submit" schools}} type="button" class="btn btn-lg btn-submit">Submit</button>
 				</div>
