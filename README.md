@@ -2,6 +2,9 @@ A Job Board application, using Ember. Currently a side-project.
 
 <h2>To-Do</h2>
 
+* Add universal Ember user to control log-in/log-out
+* Add log-out button
+	* Should transition to index and log user in/out
 * Catch-all router to redirect back to homepage for ill-advised urls
 * Refreshing User each time index page is reached
 * Adding pin #'s on sign-up for job posters
@@ -12,7 +15,7 @@ A Job Board application, using Ember. Currently a side-project.
 	* No same BU ID or Email
 * Created Saved Jobs page
 * Use backend to grab jobs, not generate them with fixtures
-* Implement search feature
+* Implement search feature - should this be at the top of the postboard page only?
 	* Should take you directly to postboard-results
 	* No paging, just scrolling (which is essentially paging, just no numbers at the bottom)
 * Change color scheme to something a little nicer

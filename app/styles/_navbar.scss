@@ -1,9 +1,10 @@
 /*  NAVBAR COMPONENETS */
+$margin-off-side: 10px;
 
 .navbar-logo {
 	height: 30px; 
 	margin-top: -5px;
-	margin-right: 10px;
+	margin-right: $margin-off-side;
 }
 
 .navbar-default .navbar-brand {
@@ -13,4 +14,23 @@
 .navbar {
 	background-color: $bu-primary;
 	color: $bu-secondary;
+}
+
+.navbar-header {
+	width: 100%;
+}
+
+#log-out-button {
+	border: $bu-secondary solid 1px;
+	background: rgba(0, 0, 0, 0);
+	color: $bu-secondary; 
+	margin-top: 8px;
+	margin-right: $margin-off-side;
+	transition: 0.3s;
+	-webkit-transition-timing-function: ease-out; /* Safari and Chrome */
+   	transition-timing-function: ease-out;
+	&:hover {
+		color: $bu-primary;
+		background-color: $bu-secondary;
+	}
 }

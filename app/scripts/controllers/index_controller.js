@@ -26,6 +26,8 @@ BuJobBoard.IndexController = Ember.ObjectController.extend({
 			user.signUp(null, {
 				success: function(user) {
 					// enter page
+					// Unhide log-out button
+					Ember.$('#log-out-button').removeClass('hidden');
 					self.transitionToRoute('postboard');
 				}, error: function(user, error) {
 					// If it does, show error message
@@ -53,6 +55,7 @@ BuJobBoard.IndexController = Ember.ObjectController.extend({
 				success: function(user) {
 					// enter page
 					console.log("Success");
+					Ember.$('#log-out-button').removeClass('hidden');
 					self.transitionToRoute('postboard');
 				}, error: function(user, error) {
 					// If it does, show error message
