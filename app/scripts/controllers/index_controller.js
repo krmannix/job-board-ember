@@ -1,4 +1,5 @@
 BuJobBoard.IndexController = Ember.ObjectController.extend({
+	needs: ['application'],
 	errorMessage: '',
 	userEmail: '',
 	userId: '',
@@ -27,6 +28,7 @@ BuJobBoard.IndexController = Ember.ObjectController.extend({
 				success: function(user) {
 					// enter page
 					// Unhide log-out button
+					this.set('controllers.application.currentUser', user);
 					Ember.$('#log-out-button').removeClass('hidden');
 					self.transitionToRoute('postboard');
 				}, error: function(user, error) {
@@ -36,7 +38,7 @@ BuJobBoard.IndexController = Ember.ObjectController.extend({
 				}
 			});
 		},
-		student_submit: function() {
+		student_login: function() {
 			// if (this.get('userEmail') === '' && this.get('userId') === '') {
 			// 	this.set("errorMessage", "Please enter your information");
 			// } else if (this.get('userEmail') === '') {
@@ -54,7 +56,7 @@ BuJobBoard.IndexController = Ember.ObjectController.extend({
 			Parse.User.logIn(this.get('userEmail'), this.get('userId'), {
 				success: function(user) {
 					// enter page
-					console.log("Success");
+					this.set('controllers.application.currentUser', user);
 					Ember.$('#log-out-button').removeClass('hidden');
 					self.transitionToRoute('postboard');
 				}, error: function(user, error) {
