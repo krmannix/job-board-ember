@@ -1,10 +1,17 @@
 BuJobBoard.IndexController = Ember.ObjectController.extend({
 	needs: ['application'],
 	errorMessage: '',
+	errorMessageStudent: '',
+	errorMessageEmployer: '',
 	userEmail: '',
 	userId: '',
 	actions: {
-		student_signup: function() {
+		signupModalStudent: function() {
+			Ember.$('#signup-choice').off('hidden.bs.modal');
+			Ember.$('#signup-choice').on('hidden.bs.modal', function (e) {
+				Ember.$('#signup-student').modal('show');
+			});
+			Ember.$('#signup-choice').modal('hide');
 			// if (this.get('userEmail') === '' && this.get('userId') === '') {
 			// 	this.set("errorMessage", "Please enter your information");
 			// } else if (this.get('userEmail') === '') {
@@ -20,25 +27,38 @@ BuJobBoard.IndexController = Ember.ObjectController.extend({
 			// Check if user exists
 				// If not, 
 					// sign user up
-			var self = this;
-			var user = new Parse.User();
-			user.set('username', this.get('userEmail'));
-			user.set('password', this.get('userId'));
-			user.signUp(null, {
-				success: function(user) {
-					// enter page
-					// Unhide log-out button
-					this.set('controllers.application.currentUser', user);
-					Ember.$('#log-out-button').removeClass('hidden');
-					self.transitionToRoute('postboard');
-				}, error: function(user, error) {
-					// If it does, show error message
-					console.log(error.code);
-					self.set("errorMessage", error.message);
-				}
-			});
+			// var self = this;
+			// var user = new Parse.User();
+			// user.set('username', this.get('userEmail'));
+			// user.set('password', this.get('userId'));
+			// user.signUp(null, {
+			// 	success: function(user) {
+			// 		// enter page
+			// 		// Unhide log-out button
+			// 		// this.set('controllers.application.currentUser', user);
+			// 		Ember.$('#log-out-button').removeClass('hidden');
+			// 		self.transitionToRoute('postboard');
+			// 	}, error: function(user, error) {
+			// 		// If it does, show error message
+			// 		console.log(error.code);
+			// 		self.set("errorMessage", error.message);
+			// 	}
+			// });
 		},
-		student_login: function() {
+		signupModalEmployer: function() {
+			Ember.$('#signup-choice').off('hidden.bs.modal');
+			Ember.$('#signup-choice').on('hidden.bs.modal', function (e) {
+				Ember.$('#signup-employer').modal('show');
+			});
+			Ember.$('#signup-choice').modal('hide');
+		},
+		signupSubmitEmployer: function() {
+			// Check all fields
+		},
+		signupSubmitStudent: function() {
+			// Check all fields
+		},
+		login: function() {
 			// if (this.get('userEmail') === '' && this.get('userId') === '') {
 			// 	this.set("errorMessage", "Please enter your information");
 			// } else if (this.get('userEmail') === '') {
@@ -56,7 +76,7 @@ BuJobBoard.IndexController = Ember.ObjectController.extend({
 			Parse.User.logIn(this.get('userEmail'), this.get('userId'), {
 				success: function(user) {
 					// enter page
-					this.set('controllers.application.currentUser', user);
+					// this.set('controllers.application.currentUser', user);
 					Ember.$('#log-out-button').removeClass('hidden');
 					self.transitionToRoute('postboard');
 				}, error: function(user, error) {

@@ -15,8 +15,20 @@
 	}
 }
 
+.modal-body {
+	.row {
+		margin-bottom: 5px;
+	}
+}
+
 
 #login-spin {
 	height: 100px;
 	width: 100px;
+}
+
+form {
+	label {
+		float: left;
+	}
 }

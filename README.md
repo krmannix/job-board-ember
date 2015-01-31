@@ -2,6 +2,7 @@ A Job Board application, using Ember. Currently a side-project.
 
 <h2>To-Do</h2>
 
+* Add sign-up modal
 * Add universal Ember user to control log-in/log-out
 * Add log-out button
 	* Should transition to index and log user in/out

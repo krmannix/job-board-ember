@@ -10,9 +10,113 @@
     	{{input type="text" class="form-control" id="uni-id" placeholder="ID #"  valueBinding="controller.userId"}}
     </div>
     <div class="login-buttons">
-        <button {{action "student_signup"}} type="button" class="btn btn-login btn-lg">Sign Up</button>
-        <button {{action "student_login"}} type="button" class="btn btn-login btn-lg">Login</button>
+        <button type="button" class="btn btn-login btn-lg" data-toggle="modal" data-target="#signup-choice">Sign Up</button>
+        <button {{action "login"}} type="button" class="btn btn-login btn-lg">Login</button>
     </div>
+    <!-- START MODALS -->
+    <div class="modal fade" id="signup-choice" role="dialog" aria-labelledby="signup-choice-header">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="signup-choice-header">Who are you?</h4>
+                </div>
+                <div class="modal-body login-buttons">
+                    <button type="button" {{action "signupModalStudent"}} class="btn btn-login btn-lg">Student</button>
+                    <button type="button" {{action "signupModalEmployer"}} class="btn btn-login btn-lg">Employer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="signup-student" role="dialog" aria-labelledby="signup-student-header">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h3 class="modal-title" id="signup-student-header">Signup as a student</h3>
+                </div>
+                <div class="modal-body">
+                    <form>
+                      <div class="form-group">
+                        <label for="firstNameStudent">First name</label>
+                        <input type="email" class="form-control" id="firstNameStudent" placeholder="Enter first name">
+                      </div>
+                      <div class="form-group">
+                        <label for="lastNameStudent">Last name</label>
+                        <input type="email" class="form-control" id="lastNameStudent" placeholder="Enter last name">
+                      </div>
+                      <div class="form-group">
+                        <label for="emailStudent">BU email address</label>
+                        <input type="email" class="form-control" id="emailStudent" placeholder="Enter email">
+                      </div>
+                      <div class="form-group">
+                        <label for="idStudent">BU ID</label>
+                        <input type="email" class="form-control" id="idStudent" placeholder="Enter BU ID">
+                      </div>
+                      <div class="form-group">
+                        <label for="passwordStudent">Password</label>
+                        <input type="password" class="form-control" id="passwordStudent" placeholder="Password">
+                      </div>
+                      <div class="form-group">
+                        <label for="confirmStudent">Password Confirmation</label>
+                        <input type="password" class="form-control" id="confirmStudent" placeholder="Confirm Password">
+                      </div>
+                      <div class="form-group">
+                        <h5 class="text-danger">{{controller.errorMessageStudent}}</h5>
+                      </div>
+                      <button {{action "submitSignupStudent"}} type="submit" class="btn btn-default">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="signup-employer" role="dialog" aria-labelledby="signup-employer-header">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h3 class="modal-title" id="signup-employer-header">Signup as an employer</h3>
+                </div>
+                <div class="modal-body">
+                    <form>
+                      <div class="form-group">
+                        <label for="firstNameEmployer">First name</label>
+                        <input type="email" class="form-control" id="firstNameEmployer" placeholder="Enter first name">
+                      </div>
+                      <div class="form-group">
+                        <label for="lastNameEmployer">Last name</label>
+                        <input type="email" class="form-control" id="lastNameEmployer" placeholder="Enter last name">
+                      </div>
+                      <div class="form-group">
+                        <label for="emailEmployer">Email address</label>
+                        <input type="email" class="form-control" id="emailEmployer" placeholder="Enter email">
+                      </div>
+                      <div class="form-group">
+                        <label for="companyEmployer">Company</label>
+                        <input type="email" class="form-control" id="companyEmployer" placeholder="Company name">
+                      </div>
+                      <div class="form-group">
+                        <label for="websiteEmployer">Company website</label>
+                        <input type="email" class="form-control" id="websiteEmployer" placeholder="Company website">
+                      </div>
+                      <div class="form-group">
+                        <label for="passwordEmployer">Password</label>
+                        <input type="password" class="form-control" id="passwordEmployer" placeholder="Password">
+                      </div>
+                      <div class="form-group">
+                        <label for="confirmEmployer">Password Confirmation</label>
+                        <input type="password" class="form-control" id="confirmEmployer" placeholder="Confirm Password">
+                      </div>
+                      <div class="form-group">
+                        <h5 class="text-danger">{{controller.errorMessageEmployer}}</h5>
+                      </div>
+                      <button {{action "submitSignupEmployer"}} type="submit" class="btn btn-default">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END MODALS -->
     <div class="error-message">
     	<h5 class="text-danger">{{controller.errorMessage}}</h5>
     </div>
