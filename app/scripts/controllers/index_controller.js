@@ -59,17 +59,17 @@ BuJobBoard.IndexController = Ember.ObjectController.extend({
 
 			// Check all fields
 			function validateFields() {
-				if (!this.get('emailEmployer')) this.set('errorMessageEmployer', 'Please enter your email');
-				else if (!this.get('firstNameEmployer')) this.set('errorMessageEmployer', 'Please enter your first name');
-				else if (!this.get('lastNameEmployer')) this.set('errorMessageEmployer', 'Please enter your last name');
-				else if (!this.get('companyEmployer')) this.set('errorMessageEmployer', 'Please enter your company');
-				else if (!this.get('websiteEmployer')) this.set('errorMessageEmployer', 'Please enter your company\'s website');
-				else if (!this.get('passwordEmployer')) this.set('errorMessageEmployer', 'Please enter a password');
-				else if (!this.get('confirmEmployer')) this.set('errorMessageEmployer', 'Please confirm your password');
-				else if (this.get('passwordEmployer') !== this.get('confirmEmployer')) this.set('errorMessageEmployer', 'Passwords do not match');
-				else if (!isUrl(this.get('websiteEmployer'))) this.set('errorMessageEmployer', 'URL is not valid');
+				if (!self.get('emailEmployer')) self.set('errorMessageEmployer', 'Please enter your email');
+				else if (!self.get('firstNameEmployer')) self.set('errorMessageEmployer', 'Please enter your first name');
+				else if (!self.get('lastNameEmployer')) self.set('errorMessageEmployer', 'Please enter your last name');
+				else if (!self.get('companyEmployer')) self.set('errorMessageEmployer', 'Please enter your company');
+				else if (!self.get('websiteEmployer')) self.set('errorMessageEmployer', 'Please enter your company\'s website');
+				else if (!self.get('passwordEmployer')) self.set('errorMessageEmployer', 'Please enter a password');
+				else if (!self.get('confirmEmployer')) self.set('errorMessageEmployer', 'Please confirm your password');
+				else if (self.get('passwordEmployer') !== self.get('confirmEmployer')) self.set('errorMessageEmployer', 'Passwords do not match');
+				else if (!isUrl(self.get('websiteEmployer'))) self.set('errorMessageEmployer', 'URL is not valid');
 				else {
-					this.set('errorMessageEmployer', '');
+					self.set('errorMessageEmployer', '');
 					return true;
 				}
 			};
@@ -105,16 +105,16 @@ BuJobBoard.IndexController = Ember.ObjectController.extend({
 
 			// Check all fields
 			function validateFields() {
-				if (!this.get('emailStudent')) this.set('errorMessageStudent', 'Please enter your email');
-				else if (!this.get('firstNameStudent')) this.set('errorMessageStudent', 'Please enter your first name');
-				else if (!this.get('lastNameStudent')) this.set('errorMessageStudent', 'Please enter your last name');
-				else if (!this.get('idStudent')) this.set('errorMessageStudent', 'Please enter your BU ID');
-				else if (!this.get('passwordStudent')) this.set('errorMessageStudent', 'Please enter a password');
-				else if (!this.get('confirmStudent')) this.set('errorMessageStudent', 'Please confirm your password');
-				else if (this.get('passwordStudent') !== this.get('confirmStudent')) this.set('errorMessageStudent', 'Passwords do not match');
-				else if (!isBUID(this.get('idStudent'))) this.set('errorMessageStudent', 'Not a valid BU ID');
+				if (!self.get('emailStudent')) self.set('errorMessageStudent', 'Please enter your email');
+				else if (!self.get('firstNameStudent')) self.set('errorMessageStudent', 'Please enter your first name');
+				else if (!self.get('lastNameStudent')) self.set('errorMessageStudent', 'Please enter your last name');
+				else if (!self.get('idStudent')) self.set('errorMessageStudent', 'Please enter your BU ID');
+				else if (!self.get('passwordStudent')) self.set('errorMessageStudent', 'Please enter a password');
+				else if (!self.get('confirmStudent')) self.set('errorMessageStudent', 'Please confirm your password');
+				else if (self.get('passwordStudent') !== self.get('confirmStudent')) self.set('errorMessageStudent', 'Passwords do not match');
+				else if (!isBUID(self.get('idStudent'))) self.set('errorMessageStudent', 'Not a valid BU ID');
 				else {
-					this.set('errorMessageStudent', '');
+					self.set('errorMessageStudent', '');
 					return true;
 				}
 			};
