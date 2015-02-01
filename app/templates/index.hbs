@@ -3,11 +3,11 @@
 	<h4 class="primary-color">Enter your information to login</h4>
     <div class="form-group">
     	<label for="uni-email">
-    	{{input type="email" class="form-control" id="uni-email" placeholder="Email"  valueBinding="controller.userEmail"}}
+    	{{input type="email" class="form-control" id="uni-email" placeholder="Email"  valueBinding="controller.loginEmail"}}
     </div>
     <div class="form-group">
     	<label for="uni-id">
-    	{{input type="text" class="form-control" id="uni-id" placeholder="ID #"  valueBinding="controller.userId"}}
+    	{{input type="text" class="form-control" id="uni-id" placeholder="Password"  valueBinding="controller.loginPassword"}}
     </div>
     <div class="login-buttons">
         <button type="button" class="btn btn-login btn-lg" data-toggle="modal" data-target="#signup-choice">Sign Up</button>
@@ -39,27 +39,27 @@
                     <form>
                       <div class="form-group">
                         <label for="firstNameStudent">First name</label>
-                        <input type="email" class="form-control" id="firstNameStudent" placeholder="Enter first name">
+                        {{input type="email" class="form-control" id="firstNameStudent" valueBinding="controller.firstNameStudent" placeholder="Enter first name"}}
                       </div>
                       <div class="form-group">
                         <label for="lastNameStudent">Last name</label>
-                        <input type="email" class="form-control" id="lastNameStudent" placeholder="Enter last name">
+                        {{input type="email" class="form-control" id="lastNameStudent" valueBinding="controller.lastNameStudent" placeholder="Enter last name"}}
                       </div>
                       <div class="form-group">
                         <label for="emailStudent">BU email address</label>
-                        <input type="email" class="form-control" id="emailStudent" placeholder="Enter email">
+                        {{input type="email" class="form-control" id="emailStudent" valueBinding="controller.emailStudent" placeholder="Enter email"}}
                       </div>
                       <div class="form-group">
                         <label for="idStudent">BU ID</label>
-                        <input type="email" class="form-control" id="idStudent" placeholder="Enter BU ID">
+                        {{input type="email" class="form-control" id="idStudent" valueBinding="controller.idStudent" placeholder="Enter BU ID"}}
                       </div>
                       <div class="form-group">
                         <label for="passwordStudent">Password</label>
-                        <input type="password" class="form-control" id="passwordStudent" placeholder="Password">
+                        {{input type="password" class="form-control" id="passwordStudent" valueBinding="controller.passwordStudent" placeholder="Password"}}
                       </div>
                       <div class="form-group">
                         <label for="confirmStudent">Password Confirmation</label>
-                        <input type="password" class="form-control" id="confirmStudent" placeholder="Confirm Password">
+                        {{input type="password" class="form-control" id="confirmStudent" valueBinding="controller.confirmStudent" placeholder="Confirm Password"}}
                       </div>
                       <div class="form-group">
                         <h5 class="text-danger">{{controller.errorMessageStudent}}</h5>
@@ -81,31 +81,31 @@
                     <form>
                       <div class="form-group">
                         <label for="firstNameEmployer">First name</label>
-                        <input type="email" class="form-control" id="firstNameEmployer" placeholder="Enter first name">
+                        {{input type="email" class="form-control" id="firstNameEmployer" valueBinding="controller.firstNameEmployer" placeholder="Enter first name"}}
                       </div>
                       <div class="form-group">
                         <label for="lastNameEmployer">Last name</label>
-                        <input type="email" class="form-control" id="lastNameEmployer" placeholder="Enter last name">
+                        {{input type="email" class="form-control" id="lastNameEmployer" valueBinding="controller.lastNameEmployer" placeholder="Enter last name"}}
                       </div>
                       <div class="form-group">
                         <label for="emailEmployer">Email address</label>
-                        <input type="email" class="form-control" id="emailEmployer" placeholder="Enter email">
+                        {{input type="email" class="form-control" id="emailEmployer" valueBinding="controller.emailEmployer" placeholder="Enter email"}}
                       </div>
                       <div class="form-group">
                         <label for="companyEmployer">Company</label>
-                        <input type="email" class="form-control" id="companyEmployer" placeholder="Company name">
+                        {{input type="email" class="form-control" id="companyEmployer" valueBinding="controller.companyEmployer" placeholder="Company name"}}
                       </div>
                       <div class="form-group">
-                        <label for="websiteEmployer">Company website</label>
-                        <input type="email" class="form-control" id="websiteEmployer" placeholder="Company website">
+                        <label for="websiteEmployer">Company website (do not incude 'http://' or 'https://')</label>
+                        {{input type="email" class="form-control" id="websiteEmployer" valueBinding="controller.websiteEmployer" placeholder="Company website"}}
                       </div>
                       <div class="form-group">
                         <label for="passwordEmployer">Password</label>
-                        <input type="password" class="form-control" id="passwordEmployer" placeholder="Password">
+                        {{input type="password" class="form-control" id="passwordEmployer" valueBinding="controller.passwordEmployer" placeholder="Password"}}
                       </div>
                       <div class="form-group">
                         <label for="confirmEmployer">Password Confirmation</label>
-                        <input type="password" class="form-control" id="confirmEmployer" placeholder="Confirm Password">
+                        {{input type="password" class="form-control" id="confirmEmployer" valueBinding="controller.confirmEmployer" placeholder="Confirm Password"}}
                       </div>
                       <div class="form-group">
                         <h5 class="text-danger">{{controller.errorMessageEmployer}}</h5>
@@ -118,6 +118,6 @@
     </div>
     <!-- END MODALS -->
     <div class="error-message">
-    	<h5 class="text-danger">{{controller.errorMessage}}</h5>
+    	<h5 class="text-danger">{{controller.errorMessageLogin}}</h5>
     </div>
 </div>
