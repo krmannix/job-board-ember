@@ -1,5 +1,5 @@
 BuJobBoard.IndexController = Ember.ObjectController.extend({
-	needs: ['application'],
+	needs: ['current_user'],
 	errorMessageLogin: '',
 	errorMessageStudent: '',
 	errorMessageEmployer: '',
@@ -46,7 +46,7 @@ BuJobBoard.IndexController = Ember.ObjectController.extend({
 				user.signUp(null, {
 					success: function(user_) {
 						Ember.$('#signup-employer').modal('hide');
-						this.set('controllers.application.currentUser', user_);
+						self.get('controllers.current_user').send('login', user);
 						Ember.$('#log-out-button').removeClass('hidden');
 						self.transitionToRoute('postboard');
 					}, error: function(user_, error) {
@@ -92,7 +92,7 @@ BuJobBoard.IndexController = Ember.ObjectController.extend({
 				user.signUp(null, {
 					success: function(user_) {
 						Ember.$('#signup-student').modal('hide');
-						this.set('controllers.application.currentUser', user_);
+						this.set('controllers.current_user.currentUser', user_);
 						Ember.$('#log-out-button').removeClass('hidden');
 						self.transitionToRoute('postboard');
 					}, error: function(user_, error) {
@@ -132,7 +132,7 @@ BuJobBoard.IndexController = Ember.ObjectController.extend({
 				// Check if user is stored in database
 				Parse.User.logIn(this.get('loginEmail'), this.get('loginPassword'), {
 					success: function(user) {
-						self.set('controllers.application.currentUser', user);
+						self.get('controllers.current_user').send('login', user);
 						Ember.$('#log-out-button').removeClass('hidden');
 						self.transitionToRoute('postboard');
 					}, error: function(user, error) {
